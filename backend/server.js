@@ -22,7 +22,7 @@ const adminRoutes = require('./routes/adminRoutes');
 // const playerRoutes = require("./routes/playerRoutes");
 // Initialize Express app
 const app = express();
-
+app.set('trust proxy', 1);
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
