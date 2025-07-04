@@ -46,7 +46,9 @@ exports.register = async (req, res) => {
       },
     });
   } catch (err) {
-    sendError(res, 500, 'Server Error');
+    // sendError(res, 500, 'Server Error');
+    console.error("Register Error:", err); // this logs the real issue in Render logs
+  sendError(res, 500, err.message);       // send the actual error message to Postman
   }
 };
 
