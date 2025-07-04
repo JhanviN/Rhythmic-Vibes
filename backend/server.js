@@ -32,11 +32,12 @@ mongoose.connect(process.env.MONGODB_URI, {
 .catch(err => console.error('MongoDB connection error:', err));
 
 // Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use(helmet());
 app.use(morgan('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+
 
 // Rate limiting
 const limiter = rateLimit({
