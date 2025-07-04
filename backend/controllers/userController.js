@@ -13,6 +13,7 @@ const generateToken = (userId) => {
 
 exports.register = async (req, res) => {
   try {
+    console.log("Incoming body:", req.body);
     const { username, email, password } = req.body;
 
     if (!username || !email || !password) {

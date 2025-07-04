@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const dotenv = require('dotenv');
-
+const app = express();
 // Load environment variables
 dotenv.config();
 
@@ -21,7 +21,7 @@ const tagRoutes = require('./routes/tagRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 // const playerRoutes = require("./routes/playerRoutes");
 // Initialize Express app
-const app = express();
+
 app.set('trust proxy', 1);
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
